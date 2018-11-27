@@ -1,0 +1,30 @@
+import React, { Component } from 'react';
+import Input from './Input';
+const Clarifai = require('clarifai');
+  const app = new Clarifai.App({
+    apiKey: `${process.env.CLARIFAI_API_KEY}`
+  });
+
+function onSubmit(submitInfo) {
+  console.log(`${submitInfo.url}`)
+  app.models.predict("e466caa0619f444ab97497640cefc4dc",`${submitInfo.url}`).then(
+    function(response) {
+     console.log(response)
+    },
+    function(err) {
+      console.log(err)
+    }
+  );
+};
+
+class Celebrity extends Component {
+  render() {
+    return (
+      <div>
+        <Input onSubmit={onSubmit} title={`Picture-URL`} />
+      </div>
+    );
+  }
+}
+
+export default Celebrity;
