@@ -4,7 +4,7 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: ''
+      input: ''
     };
   }
 
@@ -17,27 +17,26 @@ class Input extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // Call on submit from parent (LoginPage)
+    // Call onSubmit from Parent
     this.props.onSubmit(this.state);
   };
 
   render() {
     return (
       <div>
-        <h3>Login</h3>
         <div>
           <form onSubmit={event => this.handleSubmit(event)}>
-            {/* ---password--- */}
             <div>
               <div>
-                <label htmlFor="url">{`${this.props.title}`}: </label>
+                <label htmlFor={this.props.type}>
+                  {`${this.props.title} :`}</label>
                 <input
-                  id="url"
-                  type="url"
-                  name="url"
+                  id={this.props.type}
+                  type={this.props.type}
+                  name="input"
                   className="validate"
                   autoComplete="off"
-                  value={this.state.url}
+                  value={this.state.input}
                   onChange={event => this.handleChange(event)}
                 />
               </div>

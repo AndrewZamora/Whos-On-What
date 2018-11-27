@@ -6,8 +6,8 @@ const Clarifai = require('clarifai');
   });
 
 function onSubmit(submitInfo) {
-  console.log(`${submitInfo.url}`)
-  app.models.predict("e466caa0619f444ab97497640cefc4dc",`${submitInfo.url}`).then(
+  console.log(`${submitInfo.input}`)
+  app.models.predict("e466caa0619f444ab97497640cefc4dc",`${submitInfo.input}`).then(
     function(response) {
      console.log(response)
     },
@@ -21,7 +21,10 @@ class Celebrity extends Component {
   render() {
     return (
       <div>
-        <Input onSubmit={onSubmit} title={`Picture-URL`} />
+        <Input 
+        onSubmit={onSubmit}
+        type={`url`}
+        title={`Picture-URL`} />
       </div>
     );
   }
