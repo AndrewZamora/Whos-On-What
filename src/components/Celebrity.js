@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from './Input';
 const Clarifai = require('clarifai');
   const app = new Clarifai.App({
-    apiKey: `${process.env.CLARIFAI_API_KEY}`
+    apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
   });
 
 function onSubmit(submitInfo) {
