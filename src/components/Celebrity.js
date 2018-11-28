@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import Input from './Input';
 const Clarifai = require('clarifai');
-  const app = new Clarifai.App({
-    apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
-  });
-
-function onSubmit(submitInfo) {
-  console.log(`${submitInfo.input}`)
-  app.models.predict("e466caa0619f444ab97497640cefc4dc",`${submitInfo.input}`).then(
-    function(response) {
-     console.log(response)
-    },
-    function(err) {
-      console.log(err)
-    }
-  );
-};
+const app = new Clarifai.App({
+  apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
+});
 
 class Celebrity extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: ''
+    };
+  }
+  onSubmit = (submitInfo) => {
+    //  Couldn't use "this" in this.setState
+    const self = this
+    app.models.predict("e466caa0619f444ab97497640cefc4dc",
+    `${submitInfo.input}`).then(
+        function (response) {
+          self.setState({
+            name: response.outputs[0].data.regions[0].data.face.identity.concepts[0].name
+          })
+        },
+        function (err) {
+          console.log(err)
+        }
+      );
+  };
   render() {
     return (
       <div>
-        <Input 
-        onSubmit={onSubmit}
-        type={`url`}
-        title={`Picture-URL`} />
+        <Input
+          onSubmit={this.onSubmit}
+          type={`url`}
+          title={`Picture-URL`} />
+        {this.state.name.length > 0 &&
+          <h2>{this.state.name}</h2>
+        }
       </div>
     );
   }
