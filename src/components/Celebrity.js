@@ -12,17 +12,14 @@ class Celebrity extends Component {
       name: ''
     };
   }
-  onSubmit = (submitInfo) => {
-    //  Couldn't use "this" in this.setState
-    const self = this
+  onSubmit = submitInfo => {
     app.models.predict("e466caa0619f444ab97497640cefc4dc",
-    `${submitInfo.input}`).then(
-        function (response) {
-          self.setState({
-            name: response.outputs[0].data.regions[0].data.face.identity.concepts[0].name
-          })
-        },
-        function (err) {
+      `${submitInfo.input}`).then(response => {
+        this.setState({
+          name: response.outputs[0].data.regions[0].data.face.identity.concepts[0].name
+        })
+      },
+        err => {
           console.log(err)
         }
       );
