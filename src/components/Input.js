@@ -9,10 +9,23 @@ class Input extends Component {
   }
 
   handleChange = event => {
+    // FILE UPLOAD
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        let stripped = reader.result.replace(/^data:image\/[a-z]+;base64,/gi,"")
+        let base64Result = `${stripped}`;
+        this.setState({
+          input:{base64:base64Result}
+        })
+      }
+    }
+    // TEXT
     this.setState({
       [event.target.name]: event.target.value
     });
-    event.preventDefault();
   };
 
   handleSubmit = event => {
@@ -36,7 +49,6 @@ class Input extends Component {
                   name="input"
                   className="validate"
                   autoComplete="off"
-                  value={this.state.input}
                   onChange={event => this.handleChange(event)}
                 />
               </div>

@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import Input from './Input';
-const Clarifai = require('clarifai');
-const app = new Clarifai.App({
-  apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
-});
 
 class Celebrity extends Component {
   constructor(props) {
@@ -12,25 +8,39 @@ class Celebrity extends Component {
       name: ''
     };
   }
-  onSubmit = submitInfo => {
+  checkImg = img => {
+    const Clarifai = require('clarifai');
+    const app = new Clarifai.App({
+      apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
+    });
     app.models.predict("e466caa0619f444ab97497640cefc4dc",
-      `${submitInfo.input}`).then(response => {
+      img.input).then(response => {
         this.setState({
           name: response.outputs[0].data.regions[0].data.face.identity.concepts[0].name
         })
       },
         err => {
           console.log(err)
+          this.setState({
+            name: `Sorry there was an error!`
+          })
         }
       );
+  }
+  onSubmit = submitInfo => {
+    const regexUrl = /^https?:\/\//;
+    if (regexUrl.test(submitInfo.input)) {
+      this.checkImg(submitInfo);
+    }
+    this.checkImg(submitInfo);
   };
   render() {
     return (
       <div>
         <Input
           onSubmit={this.onSubmit}
-          type={`url`}
-          title={`Picture-URL`} />
+          type={this.props.inputType}
+          title={this.props.inputType} />
         {this.state.name.length > 0 &&
           <h2>{this.state.name}</h2>
         }
