@@ -5,7 +5,8 @@ class Celebrity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      status: ''
     };
   }
   checkImg = img => {
@@ -13,9 +14,13 @@ class Celebrity extends Component {
     const app = new Clarifai.App({
       apiKey: `${process.env.GATSBY_CLARIFAI_API_KEY}`
     });
+    this.setState({
+      status: 'loading'
+    })
     app.models.predict("e466caa0619f444ab97497640cefc4dc",
       img.input).then(response => {
         this.setState({
+          status: '',
           name: response.outputs[0].data.regions[0].data.face.identity.concepts[0].name
         })
       },
@@ -33,6 +38,11 @@ class Celebrity extends Component {
       this.checkImg(submitInfo);
     }
     this.checkImg(submitInfo);
+    if (this.state.name.length > 0) {
+      this.setState({
+        name: ''
+      })
+    }
   };
   render() {
     return (
@@ -43,6 +53,9 @@ class Celebrity extends Component {
           title={this.props.inputType} />
         {this.state.name.length > 0 &&
           <h2>{this.state.name}</h2>
+        }
+        {this.state.status.length > 0 &&
+          <h2>{this.state.status}</h2>
         }
       </div>
     );
