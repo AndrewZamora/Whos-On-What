@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Input from './Input';
+import LoadWidget from './LoadWidget';
 
 class Celebrity extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class Celebrity extends Component {
           <h2>{this.state.name}</h2>
         }
         {this.state.status.length > 0 &&
-          <h2>{this.state.status}</h2>
+          <LoadWidget />
         }
       </div>
     );
