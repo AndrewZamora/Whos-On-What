@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import LoadWidget from './LoadWidget';
+import MovieDetails from './MovieDetails';
 
 class Celebrity extends Component {
   constructor(props) {
@@ -53,7 +54,10 @@ class Celebrity extends Component {
           type={this.props.inputType}
           title={this.props.inputType} />
         {this.state.name.length > 0 &&
-          <h2>{this.state.name}</h2>
+          <div>
+            <h2>{this.state.name}</h2>
+            <MovieDetails actor={this.state.name} />
+          </div>
         }
         {this.state.status.length > 0 &&
           <LoadWidget />
