@@ -9,10 +9,9 @@
 cd Whos-On-What
 npm install
 ```
-2. Create File For Environmental Variables
+2. Create File For Environmental Variables in Root Directory
 ```
 touch .env.development
-cd .env.development
 ```
 3. Add Development API Keys To `.env.development`
 ```
