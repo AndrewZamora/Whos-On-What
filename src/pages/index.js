@@ -5,7 +5,6 @@ import Main from '../components/Main';
 
 const IndexPage = () => (
   <Layout>
-    <Main></Main>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
