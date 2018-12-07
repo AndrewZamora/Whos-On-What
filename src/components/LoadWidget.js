@@ -10,14 +10,10 @@ const spanStyle = {
     margin: "0.3em"
 };
 
-const divStyle = {
-    margin:'2em'
-}
-
 class Loading extends Component {
     render() {
         return (
-            <div style={divStyle}>
+            <div id="widget">
                 <span style={spanStyle} id="Circle-1" />
                 <span style={spanStyle} id="Circle-2" />
                 <span style={spanStyle} id="Circle-3" />
