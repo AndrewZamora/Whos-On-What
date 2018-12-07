@@ -5,7 +5,8 @@ import Main from '../components/Main';
 
 const IndexPage = () => (
   <Layout>
-    <Link to="/page-2/">Go to page 2</Link>
+    <Link to="/PicPage/">Picture</Link>
+    <Link to="/UrlPage/">Picture</Link>
   </Layout>
 )
 
