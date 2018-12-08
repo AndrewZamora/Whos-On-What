@@ -6,7 +6,7 @@ import Main from '../components/Main';
 const IndexPage = () => (
   <Layout>
     <Link to="/PicPage/">Picture</Link>
-    <Link to="/UrlPage/">Picture</Link>
+    <Link to="/UrlPage/">Url</Link>
   </Layout>
 )
 
