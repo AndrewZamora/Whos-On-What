@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  height: 100vh;
 }
 article,
 aside,
@@ -621,4 +622,25 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+#center {
+  display: flex;
+  flex: 2;
+}
+#center:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(2px);
+  transform: scale(1.1)
 }
