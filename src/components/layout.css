@@ -737,7 +737,8 @@ html {
   right: 0;
   z-index: -1;
   display: block;
-  background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');
+  background: #121220;
+  background-image: url('../images/movie-theater.jpg');
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;

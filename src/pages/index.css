@@ -12,6 +12,7 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    line-height: 1.9em;
 }
 
 .text-container p {
@@ -21,6 +22,7 @@
 
 .text-container span {
     color: #F64060;
+    font-weight: 700;
 }
 
 

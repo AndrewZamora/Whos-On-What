@@ -8,7 +8,7 @@ const IndexPage = () => (
     <div className="index-container">
     <div className="text-container">
       <p>
-       <span>Who's On What?</span> recognizes an actor with an upload of a picture or image url. Give it a try so you don't have to ask yourself, "Who's on what film or TV show".
+       <span>Who's On What?</span> recognizes an actor with an upload of a picture or image url. Give it a try so you don't have to ask yourself, "Who's on what film or TV show?".
       </p>
     </div>
     <div className="link-container">
