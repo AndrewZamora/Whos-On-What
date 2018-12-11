@@ -4,13 +4,13 @@ import "./LoadWidget.css";
 const spanStyle = {
     height: "1em",
     width: "1em",
-    background: "#333",
+    background: "#F64060",
     display: "inline-block",
     borderRadius: "50%",
     margin: "0.3em"
 };
 
-class Loading extends Component {
+class LoadWidget extends Component {
     render() {
         return (
             <div id="widget">
@@ -23,4 +23,4 @@ class Loading extends Component {
     }
 }
 
-export default Loading;
+export default LoadWidget;
