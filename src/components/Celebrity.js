@@ -48,7 +48,7 @@ class Celebrity extends Component {
   };
   render() {
     return (
-      <div>
+      <div style={{ color: '#fff', display: 'flex', alignItems: 'center',flexDirection:'column' }}>
         <Input
           onSubmit={this.onSubmit}
           type={this.props.inputType}
