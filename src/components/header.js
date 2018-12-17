@@ -4,9 +4,8 @@ import { Link } from 'gatsby'
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: '#F64060',
-    }}
-  >
+      background: '#F64060'
+    }}>
     <div
       style={{
         margin: '0 auto',
