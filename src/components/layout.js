@@ -28,16 +28,10 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div style={{
-          height: '100vh',
-          display: 'flex',
-          flexDirection: 'column'
-        }}>
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} />
           <main id='center'>
             {children}
           </main>
-        </div>
       </>
     )}
   />
