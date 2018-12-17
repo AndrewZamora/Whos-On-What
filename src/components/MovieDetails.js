@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MovieDetails.css'
 
 class MovieDetails extends Component {
     constructor(props) {
@@ -28,12 +29,22 @@ class MovieDetails extends Component {
     }
     render() {
         const movieList = this.state.movies.map(movie => {
-            return <li key={movie.id}>{movie.original_title}</li>
+            return <div
+            className="movie-items"
+            key={movie.id}>
+                <h3>{movie.original_title}</h3>
+                <div className="movie-description">
+                <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt="movie=poster"/>
+                <div style={{margin: '1em'}}>
+                <h4>Overview:</h4>
+                <p>{movie.overview}</p>
+                </div>
+                </div>
+            </div>
         })
         return (
             <div>
                 <ul>
-                    <p>has been on these films:</p>
                     {movieList}
                 </ul>
             </div>

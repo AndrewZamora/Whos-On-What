@@ -29,7 +29,7 @@ class Celebrity extends Component {
         err => {
           console.log(err)
           this.setState({
-            name: `Sorry there was an error!`
+            status: 'error'
           })
         }
       );
@@ -54,13 +54,18 @@ class Celebrity extends Component {
           type={this.props.inputType}
           title={this.props.inputType} />
         {this.state.name.length > 0 &&
-          <div>
-            <h2>{this.state.name}</h2>
+          <div style={{width:'90%'}}>
+            <h2>Actor's Name: {this.state.name}</h2>
+            <h2>Popular Films:</h2>
             <MovieDetails actor={this.state.name} />
           </div>
         }
-        {this.state.status.length > 0 &&
+        {this.state.status === "loading"  &&
           <LoadWidget />
+        }
+        {
+          this.state.status === "error" &&
+          <h2>aww.. 💩 there was an error!</h2>
         }
       </div>
     );
