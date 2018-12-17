@@ -7,7 +7,6 @@ class UrlPage extends Component {
     render() {
         return (
             <Layout>
-              <Link to='/'>Back</Link>
               <Celebrity inputType={`url`}/>
             </Layout>
         );

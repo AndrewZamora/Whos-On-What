@@ -7,8 +7,7 @@ class PicPage extends Component {
     render() {
         return (
             <Layout>
-              <Link to='/'>Back</Link>
-              <Celebrity inputType={`file`}/>
+                <Celebrity inputType={`file`} />
             </Layout>
         );
     }
