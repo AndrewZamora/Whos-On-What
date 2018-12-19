@@ -65,7 +65,7 @@ class Celebrity extends Component {
         }
         {
           this.state.status === "error" &&
-          <h2>aww.. 💩 there was an error!</h2>
+          <h2>aww.. <span aria-label="poop" role="img">💩</span> there was an error!</h2>
         }
       </div>
     );
