@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './input.css';
 
 class Input extends Component {
   constructor(props) {
@@ -15,10 +16,10 @@ class Input extends Component {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onloadend = () => {
-        let stripped = reader.result.replace(/^data:image\/[a-z]+;base64,/gi,"")
+        let stripped = reader.result.replace(/^data:image\/[a-z]+;base64,/gi, "")
         let base64Result = `${stripped}`;
         this.setState({
-          input:{base64:base64Result}
+          input: { base64: base64Result }
         })
       }
     }
@@ -41,8 +42,6 @@ class Input extends Component {
           <form onSubmit={event => this.handleSubmit(event)}>
             <div>
               <div>
-                <label htmlFor={this.props.type}>
-                  {`${this.props.title} :`}</label>
                 <input
                   id={this.props.type}
                   type={this.props.type}
@@ -51,6 +50,9 @@ class Input extends Component {
                   autoComplete="off"
                   onChange={event => this.handleChange(event)}
                 />
+                <label
+                  htmlFor={this.props.type}>
+                  {`${this.props.title}`}</label>
               </div>
             </div>
             {/* ---Submit--- */}
