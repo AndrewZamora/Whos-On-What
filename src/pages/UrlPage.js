@@ -6,7 +6,9 @@ class UrlPage extends Component {
     render() {
         return (
             <Layout>
-              <Celebrity inputType={`url`}/>
+                <div style={{paddingTop:"2em"}}>
+                <Celebrity inputType={`url`} title="URL"/>
+                </div>
             </Layout>
         );
     }

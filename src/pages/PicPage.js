@@ -6,7 +6,9 @@ class PicPage extends Component {
     render() {
         return (
             <Layout>
-                <Celebrity inputType={`file`} />
+                <div style={{marginTop: '4em'}}>
+                <Celebrity inputType={`file`} title="Upload" />
+                </div>
             </Layout>
         );
     }
