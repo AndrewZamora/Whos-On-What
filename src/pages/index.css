@@ -36,6 +36,11 @@
     border: solid #fff 2px;
 }
 
+.index-links:hover{
+    color:#F64060;
+    background: #fff;
+}
+
 .link-container {
     margin: auto;
     display: flex;
