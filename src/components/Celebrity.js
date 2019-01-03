@@ -47,12 +47,13 @@ class Celebrity extends Component {
     }
   };
   render() {
+    const { inputType,title } = this.props;
     return (
       <div style={{ color: '#fff', display: 'flex', alignItems: 'center',flexDirection:'column' }}>
         <Input
           onSubmit={this.onSubmit}
-          type={this.props.inputType}
-          title={this.props.title} />
+          type={inputType}
+          title={title} />
         {this.state.name.length > 0 &&
           <div style={{width:'90%'}}>
             <h2>Actor's Name: {this.state.name}</h2>
