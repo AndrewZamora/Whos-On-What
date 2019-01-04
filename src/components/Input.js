@@ -5,7 +5,8 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
+      input: '',
+      preview: ''
     };
   }
 
@@ -19,8 +20,9 @@ class Input extends Component {
         let stripped = reader.result.replace(/^data:image\/[a-z]+;base64,/gi, "")
         let base64Result = `${stripped}`;
         this.setState({
-          input: { base64: base64Result }
-        })
+          input: { base64: base64Result },
+          preview: reader.result
+        });
       }
     }
     // TEXT
@@ -36,7 +38,12 @@ class Input extends Component {
   };
 
   render() {
-    const { type,title } = this.props;
+    const { type, title } = this.props;
+    const { preview, input } = this.state;
+    const imgStyle = {
+      display: 'block',
+      maxHeight: '30vh'
+    }
     return (
       <div>
         <div>
@@ -49,16 +56,12 @@ class Input extends Component {
                   name="input"
                   className="validate"
                   autoComplete="off"
-                  onChange={event => this.handleChange(event)}
-                />
-                <label
-                  htmlFor={type}>
-                  {`${title}`}</label>
+                  onChange={event => this.handleChange(event)} />
+                <label htmlFor={type}>{`${title}`}</label>
               </div>
             </div>
-            <button type="submit" name="action">
-              Submit
-            </button>
+            {preview.length > 0 && <img src={preview} alt="Preview" style={imgStyle} />}
+            {input && <button type="submit" name="action">Submit</button>}
           </form>
         </div>
       </div>
