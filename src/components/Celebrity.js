@@ -48,19 +48,19 @@ class Celebrity extends Component {
   };
   render() {
     const { inputType, title } = this.props;
-    const { name, status } = this.state;
     return (
       <div style={{ color: '#fff', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        {name.length === 0 &&
+        {this.state.name.length === 0 &&
           <Input onSubmit={this.onSubmit} type={inputType} title={title} />}
-        {name.length > 0 &&
+        {this.state.name.length > 0 &&
           <div style={{ width: '90%' }}>
-            <h2>Actor's Name: {name}</h2>
+            <h2>Actor's Name: {this.state.name}</h2>
             <h2>Popular Films:</h2>
-            <MovieDetails actor={name} />
-          </div>}
-        {status === "loading" && <LoadWidget />}
-        {status === "error" &&
+            <MovieDetails actor={this.state.name} />
+          </div>
+          }
+        {this.state.status === "loading" && <LoadWidget />}
+        {this.state.status === "error" &&
           <h2>aww.. <span aria-label="poop" role="img">💩</span> there was an error!</h2>}
       </div>
     );
