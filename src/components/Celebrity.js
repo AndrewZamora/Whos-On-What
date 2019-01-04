@@ -52,6 +52,8 @@ class Celebrity extends Component {
       <div style={{ color: '#fff', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
         {this.state.name.length === 0 &&
           <Input onSubmit={this.onSubmit} type={inputType} title={title} />}
+          {this.state.name.length > 0 &&
+          <div style={{width: "90%"}}></div>}
         {this.state.status === "loading" && <LoadWidget />}
         {this.state.status === "error" &&
           <h2>aww.. <span aria-label="poop" role="img">💩</span> there was an error!</h2>}
