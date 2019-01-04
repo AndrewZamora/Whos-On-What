@@ -53,12 +53,12 @@ class Celebrity extends Component {
         {this.state.name.length === 0 &&
           <Input onSubmit={this.onSubmit} type={inputType} title={title} />}
           {this.state.name.length > 0 &&
-          <div style={{width: "90%"}}>
+          <div style={{width: '90%'}}>
             <h2>Actor's Name: {this.state.name}</h2>
             </div>}
-        {this.state.status === "loading" && <LoadWidget />}
-        {this.state.status === "error" &&
-          <h2>aww.. <span aria-label="poop" role="img">💩</span> there was an error!</h2>}
+        {this.state.status === 'loading' && <LoadWidget />}
+        {this.state.status === 'error' &&
+          <h2>aww.. <span aria-label='poop' role='img'>💩</span> there was an error!</h2>}
       </div>
     );
   }
