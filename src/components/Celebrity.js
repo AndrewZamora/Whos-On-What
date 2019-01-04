@@ -54,7 +54,7 @@ class Celebrity extends Component {
           <Input onSubmit={this.onSubmit} type={inputType} title={title} />}
           {this.state.name.length > 0 &&
           <div style={{width: '90%'}}>
-            <h2>Actor's Name: {this.state.name}</h2>
+            <h2>Actors Name: {this.state.name}</h2>
             </div>}
         {this.state.status === 'loading' && <LoadWidget />}
         {this.state.status === 'error' &&
