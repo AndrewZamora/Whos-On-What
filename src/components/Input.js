@@ -56,7 +56,6 @@ class Input extends Component {
                   {`${title}`}</label>
               </div>
             </div>
-            {/* ---Submit--- */}
             <button type="submit" name="action">
               Submit
             </button>
