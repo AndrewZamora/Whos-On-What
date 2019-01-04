@@ -1,3 +1,4 @@
+/* Upload Input Styles */
 [type="file"] {
     border: 0;
     clip: rect(0, 0, 0, 0);
@@ -21,6 +22,7 @@
     font-size: 1rem;
     padding:0.5em 4em;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
 [type="file"]:focus + label,
@@ -36,4 +38,7 @@
 [type="url"]+label {
     margin-left:0.5em;
 }
-
+/* Submit Button Styles */
+[type="submit"]{
+    cursor: pointer;
+}
