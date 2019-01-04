@@ -36,6 +36,7 @@ class Input extends Component {
   };
 
   render() {
+    const { type,title } = this.props;
     return (
       <div>
         <div>
@@ -43,16 +44,16 @@ class Input extends Component {
             <div>
               <div>
                 <input
-                  id={this.props.type}
-                  type={this.props.type}
+                  id={type}
+                  type={type}
                   name="input"
                   className="validate"
                   autoComplete="off"
                   onChange={event => this.handleChange(event)}
                 />
                 <label
-                  htmlFor={this.props.type}>
-                  {`${this.props.title}`}</label>
+                  htmlFor={type}>
+                  {`${title}`}</label>
               </div>
             </div>
             {/* ---Submit--- */}
