@@ -19,7 +19,7 @@ class Celebrity extends Component {
     this.setState({
       status: 'loading'
     })
-    app.models.predict("e466caa0619f444ab97497640cefc4dc",
+    app.models.predict('e466caa0619f444ab97497640cefc4dc',
       img.input).then(response => {
         this.setState({
           status: '',
