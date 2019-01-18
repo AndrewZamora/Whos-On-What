@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'WhosOnWhat?',
+        name: 'Who\'s On What?',
+        short_name: 'Who\'sOnWhat?',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#F64060',
