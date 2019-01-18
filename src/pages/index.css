@@ -34,6 +34,7 @@
     color: #fff;
     border-radius: 4rem;
     border: solid #fff 2px;
+    transition: background-color 0.2s;
 }
 
 .index-links:hover{
