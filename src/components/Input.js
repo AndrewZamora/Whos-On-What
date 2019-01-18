@@ -47,7 +47,7 @@ class Input extends Component {
     return (
       <div>
         <div>
-          <form onSubmit={event => this.handleSubmit(event)}>
+          <form style={styles.form} onSubmit={event => this.handleSubmit(event)}>
             <div>
               <div>
                 <input
@@ -61,7 +61,7 @@ class Input extends Component {
               </div>
             </div>
             {preview.length > 0 && <img src={preview} alt="Preview" style={imgStyle} />}
-            {input && <button type="submit" name="action">Submit</button>}
+            {input && <button style={styles.submit} type="submit" name="action">Submit</button>}
           </form>
         </div>
       </div>
@@ -70,3 +70,18 @@ class Input extends Component {
 }
 
 export default Input;
+
+const styles = {
+  submit:{
+    color:'#fff',
+    background: '#F64060',
+    border: 'none',
+    padding:'0.8em 2em',
+    borderRadius:'2rem',
+    marginTop: '1em'
+  },
+  form:{
+    display:'flex',
+    flexDirection:'column'
+  }
+}
