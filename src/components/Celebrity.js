@@ -49,13 +49,13 @@ class Celebrity extends Component {
   render() {
     const { inputType, title } = this.props;
     return (
-      <div style={{ color: '#fff', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      <div style={styles.container}>
         {this.state.name.length === 0 &&
           <Input onSubmit={this.onSubmit} type={inputType} title={title} />}
         {this.state.name.length > 0 &&
-          <div style={{ width: '90%' }}>
-            <h2>Actors Name: {this.state.name}</h2>
-            <h2>Popular Films:</h2>
+          <div style={{ width: '100%' }}>
+            <h2 style={styles.h2}>Actors Name: {this.state.name}</h2>
+            <h2 style={styles.h2}>Popular Films:</h2>
             <MovieDetails actor={this.state.name} />
           </div>}
         {this.state.status === 'loading' && <LoadWidget />}
@@ -67,3 +67,17 @@ class Celebrity extends Component {
 }
 
 export default Celebrity;
+
+const styles = {
+  h2: {
+    textTransform: 'capitalize'
+  },
+  container: {
+    color: '#fff',
+    display:'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent:'center',
+    margin: '0 1.45rem'
+  }
+}
