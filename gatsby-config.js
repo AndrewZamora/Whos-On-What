@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
-        short_name: 'Who\'s On What?',
+        short_name: 'WhosOnWhat?',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#F64060',
@@ -28,9 +28,7 @@ module.exports = {
         icon: 'src/images/film-icon.png', // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }
 
