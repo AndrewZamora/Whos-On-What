@@ -35,7 +35,7 @@ class MovieDetails extends Component {
                 <h3>{movie.original_title}</h3>
                 <div className="movie-description">
                 <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} alt="movie=poster"/>
-                <div style={{margin: '1em'}}>
+                <div>
                 <h4>Overview:</h4>
                 <p>{movie.overview}</p>
                 </div>
@@ -44,7 +44,7 @@ class MovieDetails extends Component {
         })
         return (
             <div>
-                <ul>
+                <ul style={{margin:0}}>
                     {movieList}
                 </ul>
             </div>
