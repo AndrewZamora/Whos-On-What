@@ -72,14 +72,6 @@ class Input extends Component {
 export default Input;
 
 const styles = {
-  submit:{
-    color:'#fff',
-    background: '#F64060',
-    border: 'none',
-    padding:'0.8em 2em',
-    borderRadius:'2rem',
-    marginTop: '1em'
-  },
   form:{
     display:'flex',
     flexDirection:'column'
