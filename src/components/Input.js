@@ -51,6 +51,7 @@ class Input extends Component {
             <div>
               <div>
                 <input
+                  autoFocus={type === 'url' ? true : false}
                   id={type}
                   type={type}
                   name="input"
@@ -72,8 +73,8 @@ class Input extends Component {
 export default Input;
 
 const styles = {
-  form:{
-    display:'flex',
-    flexDirection:'column'
+  form: {
+    display: 'flex',
+    flexDirection: 'column'
   }
 }
