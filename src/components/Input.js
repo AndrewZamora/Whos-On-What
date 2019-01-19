@@ -48,8 +48,7 @@ class Input extends Component {
       <div>
         <div>
           <form style={styles.form} onSubmit={event => this.handleSubmit(event)}>
-            <div>
-              <div>
+              <div style={type === 'url'? styles.urlContainer: styles.fileContainer}>
                 <input
                   autoFocus={type === 'url' ? true : false}
                   id={type}
@@ -59,7 +58,6 @@ class Input extends Component {
                   autoComplete="off"
                   onChange={event => this.handleChange(event)} />
                 <label htmlFor={type}>{`${title}`}</label>
-              </div>
             </div>
             {preview.length > 0 && <img src={preview} alt="Preview" style={imgStyle} />}
             {input && <button style={styles.submit} type="submit" name="action">Submit</button>}
@@ -76,5 +74,14 @@ const styles = {
   form: {
     display: 'flex',
     flexDirection: 'column'
+  },
+  urlContainer: {
+    display: 'flex',
+    width: '60vw',
+    flexDirection:'row-reverse',
+    marginTop: '30vh'
+  },
+  fileContainer: {
+    width: '100%',
   }
 }

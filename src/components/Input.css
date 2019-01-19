@@ -13,44 +13,52 @@
 
 
 [type="file"]+label {
-    background-color:#F64060;
+    background-color: #F64060;
     border-radius: 2rem;
     color: #fff;
     display: block;
     margin-bottom: 2em;
     cursor: pointer;
     font-size: 1rem;
-    padding:0.5em 4em;
+    padding: 0.5em 4em;
     transition: background-color 0.2s;
     text-align: center;
 }
 
-[type="file"]:focus + label,
-[type="file"] + label:hover {
-    background-color:#fff;
-    color:#F64060;
+[type="file"]:focus+label,
+[type="file"]+label:hover {
+    background-color: #fff;
+    color: #F64060;
 }
 
-[type="file"]:focus + label {
-  outline: 1px solid;
+[type="file"]:focus+label {
+    outline: 1px solid;
+}
+
+[type="url"] {
+    width: 100%;
+    border-radius: 0.2rem;
+    border:none;
+    padding:0 0.5em;
 }
 
 [type="url"]+label {
-    margin-left:0.5em;
+    margin-right: 0.5em;
 }
+
 /* Submit Button Styles */
-[type="submit"]{
+[type="submit"] {
     cursor: pointer;
-    color:#fff;
+    color: #fff;
     background: #F64060;
     border: none;
-    padding:0.5em 4em;
-    border-radius:2rem;
+    padding: 0.5em 4em;
+    border-radius: 2rem;
     margin-top: 1em;
     transition: background-color 0.2s;
 }
 
 [type="submit"]:hover {
-    color:#F64060;
+    color: #F64060;
     background: #fff;
 }
